@@ -8,7 +8,35 @@
 </head>
 <body>
     <py-script>
-print('PyScript デビュー！')
+import numpy as np
+import matplotlib.pyplot as plt
+
+def quadratic_function(x, a, b, c):
+    return a * x**2 + b * x + c
+
+def plot_function(x, y, title):
+    plt.plot(x, y)
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title(title)
+    plt.grid(True)
+    plt.show()
+
+if __name__ == "__main__":
+    # プロットする範囲を指定します（例：-10から10までの範囲を0.1刻みで生成）
+    x = np.arange(-10, 10, 0.1)
+
+    # 2次関数のパラメータを設定します
+    a = 1
+    b = 2
+    c = 3
+
+    # 2次関数を計算します
+    y = quadratic_function(x, a, b, c)
+
+    # グラフを描画します
+    plot_function(x, y, f"Quadratic Function: y = {a}x^2 + {b}x + {c}")
+
     </py-script>
 </body>
 </html>
